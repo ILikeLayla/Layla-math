@@ -17,3 +17,9 @@ Cargo.lock
 # Added by cargo
 
 /target
+
+# Python virtual environments
+/venv*/
+
+# Python test caches
+/py_test/
