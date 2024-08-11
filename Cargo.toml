@@ -2,15 +2,25 @@
 name = "layla-math"
 version = "0.1.0"
 edition = "2021"
+description = "A simple math support library."
+license = "MIT"
+build = "build.rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[dependencies]
-layla-log = "0.1.0"
 
 [lib]
 name = "layla_math"
 
-[dependencies.pyo3]
-version = "0.21.1"
-features = ["extension-module", "auto-initialize"]
+[features]
+# python-support = ["pyo3"]
+cuda-support = ["cc"]
+log = ["layla-log"]
+rough-num = []
+
+[dependencies]
+rand = "0.8.5"
+layla-log = { version = "0.2.8", optional = true }
+# pyo3 = { version = "0.21.1", features = ["extension-module", "auto-initialize"], optional = true }
+
+[build-dependencies]
+cc = { version = "1.0", optional = true }
